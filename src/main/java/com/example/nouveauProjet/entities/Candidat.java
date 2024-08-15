@@ -19,6 +19,17 @@ public class Candidat {
 
     private String sexe;
 
+    private double moyenneBacProb;
+
+    private String Observations;
+
+
+    private int age;
+
+
+
+
+
 
     @ManyToOne
     @JoinColumn(name="session_id")

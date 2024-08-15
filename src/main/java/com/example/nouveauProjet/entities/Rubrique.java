@@ -27,6 +27,15 @@ public class Rubrique {
 
     private String nomDeLaRubrique;
 
+    private double note;
+
+    private int coefficient;
+
+
+
+
+    private double noteEliminatoire;
+
     @JsonIgnore
     @OneToMany(mappedBy="rubrique",cascade = {CascadeType.REFRESH,CascadeType.PERSIST,CascadeType.MERGE})
     private List<Seance> seanceList;
