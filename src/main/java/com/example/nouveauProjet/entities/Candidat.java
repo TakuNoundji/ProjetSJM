@@ -21,7 +21,7 @@ public class Candidat {
 
     private double moyenneBacProb;
 
-    private String Observations;
+    private String observations;
 
 
     private int age;

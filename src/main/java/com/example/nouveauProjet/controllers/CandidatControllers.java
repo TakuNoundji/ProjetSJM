@@ -46,7 +46,7 @@ public class CandidatControllers {
 
 
     @PostMapping("/save")
-    public ResponseEntity<?> saveRubrique(@RequestBody CandidatRequest candidatRequest){
+    public ResponseEntity<?> saveCandidat(@RequestBody CandidatRequest candidatRequest){
         try{
             Candidat candidat = candidatService.saveCandidat(candidatRequest);
             return  new ResponseEntity<>(candidat, HttpStatus.CREATED);

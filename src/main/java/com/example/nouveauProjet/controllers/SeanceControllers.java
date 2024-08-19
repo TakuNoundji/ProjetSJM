@@ -31,6 +31,8 @@ public class SeanceControllers {
         }
     }
 
+
+
     @GetMapping({"/{id}"})
     public ResponseEntity<?> getSeance(@PathVariable Long id){
         try {

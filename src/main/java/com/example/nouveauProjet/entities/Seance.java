@@ -21,6 +21,6 @@ public class Seance {
     private int nbrseance;
 
     @ManyToOne
-    @JoinColumn(name="seance_id")
+    @JoinColumn(name="rubrique_id")
     private Rubrique rubrique;
 }

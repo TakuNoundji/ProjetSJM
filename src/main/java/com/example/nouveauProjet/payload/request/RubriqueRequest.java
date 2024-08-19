@@ -1,8 +1,11 @@
 package com.example.nouveauProjet.payload.request;
 
 
+import com.example.nouveauProjet.entities.Seance;
 import lombok.Data;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Data
 public class RubriqueRequest {
@@ -20,5 +23,14 @@ public class RubriqueRequest {
     private String heureDeFin;
 
     private String nomDeLaRubrique;
+    private double note;
+    private int coefficient;
+
+
+
+
+    private double noteEliminatoire;
+
+
 
 }

@@ -2,7 +2,9 @@ package com.example.nouveauProjet.controllers;
 
 
 import com.example.nouveauProjet.entities.Rubrique;
+import com.example.nouveauProjet.entities.Session;
 import com.example.nouveauProjet.payload.request.RubriqueRequest;
+import com.example.nouveauProjet.payload.request.SessionRequest;
 import com.example.nouveauProjet.payload.response.MessageResponse;
 import com.example.nouveauProjet.services.RubriqueService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +48,16 @@ public class RubriqueControllers {
     public ResponseEntity<?> saveRubrique(@RequestBody RubriqueRequest rubriqueRequest) {
         try {
             Rubrique rubrique = rubriqueService.saveRubrique(rubriqueRequest);
+            return new ResponseEntity<>(rubrique, HttpStatus.CREATED);
+        }catch (Exception e){
+            return new ResponseEntity<>(new MessageResponse(e.getMessage()), HttpStatus.OK);
+        }
+    }
+
+    @PostMapping("/update")
+    public ResponseEntity<?> updateRubrique(@RequestBody RubriqueRequest rubriqueRequest){
+        try {
+            Rubrique rubrique = rubriqueService.updateRubrique(rubriqueRequest);
             return new ResponseEntity<>(rubrique, HttpStatus.CREATED);
         }catch (Exception e){
             return new ResponseEntity<>(new MessageResponse(e.getMessage()), HttpStatus.OK);

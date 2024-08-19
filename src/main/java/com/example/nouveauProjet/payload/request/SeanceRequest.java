@@ -14,6 +14,6 @@ public class SeanceRequest {
     private int jury;
 
     private int nbrseance;
-    private Long seance_id;
+    private Long rubrique_id;
 
 }

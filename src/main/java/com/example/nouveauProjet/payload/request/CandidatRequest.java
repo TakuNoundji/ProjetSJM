@@ -14,6 +14,13 @@ public class CandidatRequest {
     private String matricule;
 
     private String sexe;
+
+    private double moyenneBacProb;
+
+    private String observations;
+
+
+    private int age;
     private Long session_id;
 
 }

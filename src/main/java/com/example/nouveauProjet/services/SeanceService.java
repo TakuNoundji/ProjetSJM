@@ -36,7 +36,7 @@ public class SeanceService {
         if (seanceRepository.existsById(id)){
             return seanceRepository.findById(id).get();
         }else{
-            throw new Exception("ce séance n\'existe pas");
+            throw new Exception("cette séance n\'existe pas");
         }
     }
 
@@ -68,7 +68,7 @@ public class SeanceService {
     public Seance maptoEntity(SeanceRequest seanceRequest) {
 
         Seance seance=mapper.map(seanceRequest,Seance.class);
-        Rubrique rubrique = rubriqueRepository.findById(seanceRequest.getSeance_id()).get();
+        Rubrique rubrique = rubriqueRepository.findById(seanceRequest.getRubrique_id()).get();
 
         seance.setRubrique(rubrique);
         return seance;

@@ -1,8 +1,10 @@
 package com.example.nouveauProjet.controllers;
 
 
+import com.example.nouveauProjet.entities.Candidat;
 import com.example.nouveauProjet.entities.Seance;
 import com.example.nouveauProjet.entities.Session;
+import com.example.nouveauProjet.payload.request.CandidatRequest;
 import com.example.nouveauProjet.payload.request.SessionRequest;
 import com.example.nouveauProjet.payload.response.MessageResponse;
 import com.example.nouveauProjet.services.SessionService;
@@ -52,6 +54,17 @@ public class SessionControllers {
             return new ResponseEntity<>(session, HttpStatus.CREATED);
         }catch (Exception e){
             return new ResponseEntity<>(new MessageResponse(e.getMessage()), HttpStatus.OK);
+        }
+    }
+
+    @PostMapping("/save")
+    public ResponseEntity<?> saveSession(@RequestBody SessionRequest sessionRequest){
+        try{
+            Session session = sessionService.saveSession(sessionRequest);
+            return  new ResponseEntity<>(session, HttpStatus.CREATED);
+        }catch (Exception e){
+            return new ResponseEntity<>(new MessageResponse(e.getMessage()), HttpStatus.OK
+            );
         }
     }
 
