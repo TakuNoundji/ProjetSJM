@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
@@ -24,5 +25,12 @@ public class Session {
     @JsonIgnore
     @OneToMany(mappedBy="session",cascade = {CascadeType.REFRESH,CascadeType.PERSIST,CascadeType.MERGE})
     private List<Candidat> candidatList;
+
+    @ManyToMany
+    @JoinTable(
+            name = "rubriqueSession",
+            joinColumns = @JoinColumn(name = "rubrique_id"),
+            inverseJoinColumns = @JoinColumn(name = "session_id"))
+    Set<Rubrique> likedRubriques;
 
 }

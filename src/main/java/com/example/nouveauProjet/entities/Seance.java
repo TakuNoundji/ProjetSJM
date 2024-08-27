@@ -4,6 +4,8 @@ package com.example.nouveauProjet.entities;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.Set;
+
 @Entity
 @Data
 public class Seance {
@@ -23,4 +25,9 @@ public class Seance {
     @ManyToOne
     @JoinColumn(name="rubrique_id")
     private Rubrique rubrique;
-}
+
+
+
+
+    @ManyToMany(mappedBy = "likedSeances")
+    Set<Candidat> likes;}

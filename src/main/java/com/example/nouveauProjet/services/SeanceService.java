@@ -7,6 +7,7 @@ import com.example.nouveauProjet.entities.Seance;
 import com.example.nouveauProjet.entities.Session;
 import com.example.nouveauProjet.payload.request.SeanceRequest;
 import com.example.nouveauProjet.payload.request.SessionRequest;
+import com.example.nouveauProjet.payload.request.SimulationRequest;
 import com.example.nouveauProjet.repositories.RubriqueRepository;
 import com.example.nouveauProjet.repositories.SeanceRepository;
 import org.modelmapper.ModelMapper;
@@ -62,6 +63,18 @@ public class SeanceService {
         }else{
             throw new Exception("Seance non trouvée");
         }
+    }
+
+
+    public int saveListeSeance(SimulationRequest simulationRequest){
+
+
+        for (  SeanceRequest simuleRequest : simulationRequest.getListeSeance()){
+
+            saveSeance(simuleRequest) ;
+
+        }
+        return 0;
     }
 
 

@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
@@ -39,5 +40,11 @@ public class Rubrique {
     @JsonIgnore
     @OneToMany(mappedBy="rubrique",cascade = {CascadeType.REFRESH,CascadeType.PERSIST,CascadeType.MERGE})
     private List<Seance> seanceList;
+
+
+
+    @ManyToMany(mappedBy = "likedRubriques")
+    Set<Session> likesSession;
+
 
 }

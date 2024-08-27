@@ -4,6 +4,8 @@ package com.example.nouveauProjet.entities;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.Set;
+
 @Entity
 @Data
 public class Candidat {
@@ -34,5 +36,19 @@ public class Candidat {
     @ManyToOne
     @JoinColumn(name="session_id")
     private Session session;
+
+
+    @ManyToMany
+    @JoinTable(
+            name = "affectation",
+            joinColumns = @JoinColumn(name = "candidat_id"),
+            inverseJoinColumns = @JoinColumn(name = "seance_id"))
+    Set<Seance> likedSeances;
+
+
+
+
+
+
 
 }
