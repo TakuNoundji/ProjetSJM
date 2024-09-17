@@ -4,6 +4,7 @@ package com.example.nouveauProjet.entities;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -21,9 +22,21 @@ public class Candidat {
 
     private String sexe;
 
-    private double moyenneBacProb;
+    private double moyenneProbatoire;
 
     private String observations;
+
+
+    private String mentionBaccFrancophone;
+
+    private String gceA;
+
+
+/*
+    @OneToMany(mappedBy ="candidat")
+    private List<Note> notes;*/
+
+
 
 
     private int age;

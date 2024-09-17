@@ -28,11 +28,14 @@ public class Rubrique {
 
     private String nomDeLaRubrique;
 
-    private double note;
+//    private double note;
 
     private int coefficient;
 
 
+/*
+    @OneToMany(mappedBy = "rubrique")
+    private List<Note> notes;*/
 
 
     private double noteEliminatoire;

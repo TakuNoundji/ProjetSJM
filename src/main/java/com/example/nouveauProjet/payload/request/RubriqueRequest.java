@@ -23,7 +23,7 @@ public class RubriqueRequest {
     private String heureDeFin;
 
     private String nomDeLaRubrique;
-    private double note;
+//    private double note;
     private int coefficient;
 
 

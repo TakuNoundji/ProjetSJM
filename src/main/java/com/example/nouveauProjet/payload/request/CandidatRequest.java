@@ -15,9 +15,16 @@ public class CandidatRequest {
 
     private String sexe;
 
-    private double moyenneBacProb;
+
+    private double moyenneProbatoire;
 
     private String observations;
+
+
+    private String mentionBaccFrancophone;
+
+    private String gceA;
+    
 
 
     private int age;
